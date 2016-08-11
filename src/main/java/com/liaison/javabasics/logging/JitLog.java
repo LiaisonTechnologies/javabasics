@@ -1,5 +1,5 @@
 
-package com.liaison.jitlog;
+package com.liaison.javabasics.logging;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.liaison</groupId>
-    <artifactId>jitlog</artifactId>
+    <artifactId>javabasics</artifactId>
     <version>1.0.0</version>
 
     <packaging>jar</packaging>
-    <name>jitlog: Just-in-Time Logger for SLF4J</name>
-    <url>http://maven.apache.org</url>
+    <name>javabasics: Basic Utilities for Java-based Projects</name>
+    <url>http://www.liaison.com</url>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -22,6 +22,11 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.21</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
         </dependency>
     </dependencies>
 </project>
