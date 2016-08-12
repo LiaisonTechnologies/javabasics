@@ -157,23 +157,32 @@ public final class Util extends Uninstantiable {
     }
     
     /**
-     * TODO
-     * @param expectedState
-     * @param currentState
-     * @param stateLock
-     * @throws IllegalStateException
+     * Equivalent to {@link #verifyState(Enum, Enum)}, except that the comparison is wrapped in a
+     * <code>synchronized</code> block which locks on the given object.
+     * @param expectedState Expected value (nullable) for the given state
+     * @param currentState Actual/current value (nullable) for the given state
+     * @param stateLock Object (non-null) on which to synchronize/lock for the duration of the
+     *                  comparison
+     * @throws IllegalStateException if <code>expectedState != currentState</code>
+     * @throws NullPointerException if <code>stateLock</code> is <code>null</code>
      */
-    public static <E extends Enum<E>> void verifyState(final E expectedState, final E currentState, final Object stateLock) throws IllegalStateException {
+    public static <E extends Enum<E>> void verifyState(final E expectedState, final E currentState, final Object stateLock) throws IllegalStateException, NullPointerException {
         synchronized(stateLock) {
             verifyState(expectedState, currentState);
         }
     }
     
     /**
-     * TODO
-     * @param expectedState
-     * @param currentState
-     * @throws IllegalStateException
+     * Convenience method which ensures that a given object representing some kind of state
+     * (implemented as an object of a particular Enum type) matches a defined, "expected" state. If
+     * the current state does not match the expected value, an {@link IllegalStateException} is
+     * thrown with a message indicating the expected and actual values of the state.
+     * <br /><br />
+     * If it is necessary to lock on a given object during the state comparison, use
+     * {@link #verifyState(Enum, Enum, Object)} instead.
+     * @param expectedState Expected value (nullable) for the given state
+     * @param currentState Actual/current value (nullable) for the given state
+     * @throws IllegalStateException if <code>expectedState != currentState</code>
      */
     public static <E extends Enum<E>> void verifyState(final E expectedState, final E currentState) throws IllegalStateException {
         if (expectedState != currentState) {
