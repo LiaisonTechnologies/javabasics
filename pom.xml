@@ -5,7 +5,7 @@
 
     <groupId>com.liaison</groupId>
     <artifactId>javabasics</artifactId>
-    <version>1.0.0</version>
+    <version>0.1.0</version>
 
     <packaging>jar</packaging>
     <name>javabasics: Basic Utilities for Java-based Projects</name>
