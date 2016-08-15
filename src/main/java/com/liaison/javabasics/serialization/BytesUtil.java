@@ -1,10 +1,17 @@
-/**
- * Copyright 2015 Liaison Technologies, Inc.
- * This software is the confidential and proprietary information of
- * Liaison Technologies, Inc. ("Confidential Information").  You shall
- * not disclose such Confidential Information and shall use it only in
- * accordance with the terms of the license agreement you entered into
- * with Liaison Technologies.
+/*
+ * Copyright © 2016 Liaison Technologies, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at:
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  */
 package com.liaison.javabasics.serialization;
 
@@ -51,10 +58,16 @@ public final class BytesUtil extends Uninstantiable {
      * TODO
      */
     public static final byte[] HBASE_EMPTY = new byte[0];
+
     /**
-     * TODO
+     * Depending on the JVM implementation, Java arrays may be limited in size to slightly under
+     * {@link Integer#MAX_VALUE} (the maximum possible address). For safety, follow the convention
+     * established in the implementation of {@link java.util.ArrayList}, and limit array sizes to
+     * <code>Integer.MAX_VALUE - 8</code>.
+     * @see <a href="http://stackoverflow.com/questions/3038392/do-java-arrays-have-a-maximum-size">http://stackoverflow.com/questions/3038392/do-java-arrays-have-a-maximum-size</a>
+     * @see <a href="http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java#l229">http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java#l229</a>
      */
-    public static final long BYTE_CONCAT_MAX_LENGTH = Integer.MAX_VALUE - 5;
+    public static final long BYTE_CONCAT_MAX_LENGTH = Integer.MAX_VALUE - 8;
     
     /**
      * TODO
