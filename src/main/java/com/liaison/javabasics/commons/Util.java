@@ -39,19 +39,20 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param ref
-     * @return
+     * @param ref TODO
+     * @return TODO
      */
     public static int hashCode(final Object ref) {
         return (ref == null)?0:ref.hashCode();
     }
-    
+
     /**
      * TODO
-     * @param ref1
-     * @param ref2
-     * @param equals
-     * @return
+     * @param ref1 TODO
+     * @param ref2 TODO
+     * @param equals TODO
+     * @param <T> TODO
+     * @return TODO
      */
     public static <T> boolean refEquals(final T ref1, final T ref2, final BiPredicate<? super T, ? super T> equals) {
         return (((ref1 == null) && (ref2 == null))
@@ -61,9 +62,9 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param ref1
-     * @param ref2
-     * @return
+     * @param ref1 TODO
+     * @param ref2 TODO
+     * @return TODO
      */
     public static boolean refEquals(final Object ref1, final Object ref2) {
         return refEquals(ref1,
@@ -74,9 +75,9 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param ref1
-     * @param ref2
-     * @return
+     * @param ref1 TODO
+     * @param ref2 TODO
+     * @return TODO
      */
     public static boolean refEquals(final byte[] ref1, final byte[] ref2) {     
         return refEquals(ref1,
@@ -87,8 +88,8 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param str
-     * @return
+     * @param str TODO
+     * @return TODO
      */
     public static String simplify(String str) {
         if (str != null) {
@@ -102,11 +103,11 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param ref
-     * @param closureName
-     * @param varName
-     * @param varType
-     * @throws IllegalArgumentException
+     * @param ref TODO
+     * @param closureName TODO
+     * @param varName TODO
+     * @param varType TODO
+     * @throws IllegalArgumentException TODO
      */
     public static void ensureNotNull(final Object ref, final String closureName, final String varName, final Class<?> varType) throws IllegalArgumentException {
         if (ref == null) {
@@ -119,11 +120,11 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param ref
-     * @param enclosingType
-     * @param varName
-     * @param varType
-     * @throws IllegalArgumentException
+     * @param ref TODO
+     * @param enclosingType TODO
+     * @param varName TODO
+     * @param varType TODO
+     * @throws IllegalArgumentException TODO
      */
     public static void ensureNotNull(final Object ref, final Class<?> enclosingType, final String varName, final Class<?> varType) throws IllegalArgumentException {
         ensureNotNull(ref, enclosingType.getSimpleName(), varName, varType);
@@ -131,10 +132,10 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param ref
-     * @param enclosingType
-     * @param varName
-     * @throws IllegalArgumentException
+     * @param ref TODO
+     * @param enclosingType TODO
+     * @param varName TODO
+     * @throws IllegalArgumentException TODO
      */
     public static void ensureNotNull(final Object ref, final Class<?> enclosingType, final String varName) throws IllegalArgumentException {
         ensureNotNull(ref, enclosingType, varName, null);
@@ -142,11 +143,11 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param ref
-     * @param enclosingInstance
-     * @param varName
-     * @param varType
-     * @throws IllegalArgumentException
+     * @param ref TODO
+     * @param enclosingInstance TODO
+     * @param varName TODO
+     * @param varType TODO
+     * @throws IllegalArgumentException TODO
      */
     public static void ensureNotNull(final Object ref, final Object enclosingInstance, final String varName, final Class<?> varType) throws IllegalArgumentException {
         ensureNotNull(ref, enclosingInstance.getClass(), varName, varType);
@@ -154,10 +155,10 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param ref
-     * @param enclosingInstance
-     * @param varName
-     * @throws IllegalArgumentException
+     * @param ref TODO
+     * @param enclosingInstance TODO
+     * @param varName TODO
+     * @throws IllegalArgumentException TODO
      */
     public static void ensureNotNull(final Object ref, final Object enclosingInstance, final String varName) throws IllegalArgumentException {
         ensureNotNull(ref, enclosingInstance.getClass(), varName);
@@ -173,6 +174,18 @@ public final class Util extends Uninstantiable {
      * @throws IllegalStateException if <code>expectedState != currentState</code>
      * @throws NullPointerException if <code>stateLock</code> is <code>null</code>
      */
+
+    /**
+     * Equivalent to {@link #verifyState(Enum, Enum)}, except that the comparison is wrapped in a
+     * <code>synchronized</code> block which locks on the given object.
+     * @param expectedState Expected value (nullable) for the given state
+     * @param currentState Actual/current value (nullable) for the given state
+     * @param stateLock Object (non-null) on which to synchronize/lock for the duration of the
+     *                  comparison
+     * @param <E> TODO
+     * @throws IllegalStateException if <code>expectedState != currentState</code>
+     * @throws NullPointerException if <code>stateLock</code> is <code>null</code>
+     */
     public static <E extends Enum<E>> void verifyState(final E expectedState, final E currentState, final Object stateLock) throws IllegalStateException, NullPointerException {
         synchronized(stateLock) {
             verifyState(expectedState, currentState);
@@ -184,11 +197,12 @@ public final class Util extends Uninstantiable {
      * (implemented as an object of a particular Enum type) matches a defined, "expected" state. If
      * the current state does not match the expected value, an {@link IllegalStateException} is
      * thrown with a message indicating the expected and actual values of the state.
-     * <br /><br />
+     * <br><br>
      * If it is necessary to lock on a given object during the state comparison, use
      * {@link #verifyState(Enum, Enum, Object)} instead.
      * @param expectedState Expected value (nullable) for the given state
      * @param currentState Actual/current value (nullable) for the given state
+     * @param <E> TODO
      * @throws IllegalStateException if <code>expectedState != currentState</code>
      */
     public static <E extends Enum<E>> void verifyState(final E expectedState, final E currentState) throws IllegalStateException {
@@ -200,10 +214,10 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param log
-     * @param logMethodName
-     * @param logMsg
-     * @param exc
+     * @param log TODO
+     * @param logMethodName TODO
+     * @param logMsg TODO
+     * @param exc TODO
      */
     public static void traceLog(final Logger log, final String logMethodName, String logMsg, final Throwable exc) {
         // >>>>> LOG >>>>>
@@ -226,24 +240,25 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param log
-     * @param logMethodName
-     * @param logMsg
+     * @param log TODO
+     * @param logMethodName TODO
+     * @param logMsg TODO
      */
     public static void traceLog(final Logger log, final String logMethodName, String logMsg) {
         traceLog(log, logMethodName, logMsg, null);
     }
-    
+
     /**
      * TODO
-     * @param param
-     * @param enclosingInstance
-     * @param paramName
-     * @param paramClass
-     * @param valueSetTarget
-     * @return
-     * @throws IllegalArgumentException
-     * @throws IllegalStateException
+     * @param param TODO
+     * @param enclosingInstance TODO
+     * @param paramName TODO
+     * @param paramClass TODO
+     * @param valueSetTarget TODO
+     * @param <X> TODO
+     * @return TODO
+     * @throws IllegalArgumentException TODO
+     * @throws IllegalStateException TODO
      */
     public static <X> X validateExactlyOnceParam(final X param, final Object enclosingInstance, final String paramName, final Class<X> paramClass, final Object valueSetTarget) throws IllegalArgumentException, IllegalStateException {
         ensureNotNull(param, enclosingInstance, paramName, paramClass);
@@ -253,10 +268,10 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param entityName
-     * @param entityClass
-     * @param valueSetTarget
-     * @throws IllegalStateException
+     * @param entityName TODO
+     * @param entityClass TODO
+     * @param valueSetTarget TODO
+     * @throws IllegalStateException TODO
      */
     public static void validateExactlyOnce(final String entityName, final Class<?> entityClass, final Object valueSetTarget) throws IllegalStateException {
         if (valueSetTarget != null) {
@@ -270,9 +285,9 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param strGen
-     * @param indentCount
-     * @throws IllegalStateException
+     * @param strGen TODO
+     * @param indentCount TODO
+     * @throws IllegalStateException TODO
      */
     public static void indent(final Appendable strGen, final int indentCount) throws IllegalStateException {
         for (int counter = 0; counter < indentCount; counter++) {
@@ -290,10 +305,10 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param strGen
-     * @param indentCount
-     * @param objListForLine
-     * @throws IllegalStateException
+     * @param strGen TODO
+     * @param indentCount TODO
+     * @param objListForLine TODO
+     * @throws IllegalStateException TODO
      */
     public static void appendIndented(final Appendable strGen, final int indentCount, final Object... objListForLine) throws IllegalStateException {
         if (objListForLine != null) {
@@ -314,9 +329,9 @@ public final class Util extends Uninstantiable {
     
     /**
      * TODO
-     * @param strGen
-     * @param objListForLine
-     * @throws IllegalStateException
+     * @param strGen TODO
+     * @param objListForLine TODO
+     * @throws IllegalStateException TODO
      */
     public static void append(final Appendable strGen, final Object... objListForLine) throws IllegalStateException {
         appendIndented(strGen, -1, objListForLine);
@@ -324,14 +339,14 @@ public final class Util extends Uninstantiable {
 
     /**
      *
-     * @param map
-     * @param key
-     * @param addendum
-     * @param updater
-     * @param maker
-     * @param <K>
-     * @param <A>
-     * @param <V>
+     * @param map TODO
+     * @param key TODO
+     * @param addendum TODO
+     * @param updater TODO
+     * @param maker TODO
+     * @param <K> TODO
+     * @param <A> TODO
+     * @param <V> TODO
      */
     public static <K, A, V> void appendToValueInMap(final Map<K, V> map, final K key, final A addendum, final BiConsumer<V, A> updater, final Supplier<V> maker) {
         V valueContainer;
@@ -350,11 +365,11 @@ public final class Util extends Uninstantiable {
 
     /**
      * TODO
-     * @param key
-     * @param value
-     * @param map
-     * @param <K>
-     * @param <V>
+     * @param key TODO
+     * @param value TODO
+     * @param map TODO
+     * @param <K> TODO
+     * @param <V> TODO
      */
     public static <K, V> void putToLinkedListInMap(final Map<K, List<V>> map, final K key, final V value) {
         appendToValueInMap(map, key, value, List::add, LinkedList::new);
