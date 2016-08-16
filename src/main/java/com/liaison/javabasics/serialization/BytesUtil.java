@@ -71,9 +71,9 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param ref1
-     * @param ref2
-     * @return
+     * @param ref1 TODO
+     * @param ref2 TODO
+     * @return TODO
      */
     public static boolean refEquals(final byte[] ref1, final byte[] ref2) {
         return Util.refEquals(ref1, ref2);
@@ -81,8 +81,8 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param bytes
-     * @return
+     * @param bytes TODO
+     * @return TODO
      */
     public static byte[] simplify(byte[] bytes) {
         if ((bytes != null) && (bytes.length <= 0)) {
@@ -122,8 +122,8 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param byteArr
-     * @return
+     * @param byteArr TODO
+     * @return TODO
      */
     public static byte[] forHBase(final byte[] byteArr) {
         if (byteArr == null) {
@@ -163,9 +163,9 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param bytes
-     * @param offset
-     * @return
+     * @param bytes TODO
+     * @param offset TODO
+     * @return TODO
      */
     public static String toString(final byte[] bytes, final int offset) {
         if (bytes != null && offset >= 0 && offset <= bytes.length) {
@@ -176,8 +176,8 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param value
-     * @return
+     * @param value TODO
+     * @return TODO
      */
     public static byte[] toBytes(final long value) {
         return Longs.toByteArray(value);
@@ -185,8 +185,8 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param value
-     * @return
+     * @param value TODO
+     * @return TODO
      */
     public static byte[] toBytes(final int value) {
         return Ints.toByteArray(value);
@@ -194,8 +194,8 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param value
-     * @return
+     * @param value TODO
+     * @return TODO
      */
     public static byte[] toBytes(final short value) {
         return Shorts.toByteArray(value);
@@ -203,8 +203,8 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param bytes
-     * @return
+     * @param bytes TODO
+     * @return TODO
      */
     public static Long toLong(final byte[] bytes) {
         // TODO: determine constant values programmatically, or make them constant
@@ -216,9 +216,9 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param bytes
-     * @param offset
-     * @return
+     * @param bytes TODO
+     * @param offset TODO
+     * @return TODO
      */
     public static Long toLong(final byte[] bytes, final int offset) {
         // TODO: determine constant values programmatically, or make them constant
@@ -238,15 +238,15 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param b1
-     * @param b2
-     * @param b3
-     * @param b4
-     * @param b5
-     * @param b6
-     * @param b7
-     * @param b8
-     * @return
+     * @param b1 TODO
+     * @param b2 TODO
+     * @param b3 TODO
+     * @param b4 TODO
+     * @param b5 TODO
+     * @param b6 TODO
+     * @param b7 TODO
+     * @param b8 TODO
+     * @return TODO
      */
     public static long toLong(byte b1, byte b2, byte b3, byte b4, byte b5, byte b6, byte b7, byte b8) {
         return Longs.fromBytes(b1, b2, b3, b4, b5, b6, b7, b8);
@@ -254,8 +254,8 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param bytes
-     * @return
+     * @param bytes TODO
+     * @return TODO
      */
     public static Integer toInteger(final byte[] bytes) {
         // TODO: determine constant values programmatically, or make them constant
@@ -267,9 +267,9 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param bytes
-     * @param offset
-     * @return
+     * @param bytes TODO
+     * @param offset TODO
+     * @return TODO
      */
     public static Integer toInteger(final byte[] bytes, final int offset) {
         // TODO: determine constant values programmatically, or make them constant
@@ -285,11 +285,11 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param b1
-     * @param b2
-     * @param b3
-     * @param b4
-     * @return
+     * @param b1 TODO
+     * @param b2 TODO
+     * @param b3 TODO
+     * @param b4 TODO
+     * @return TODO
      */
     public static int toInteger(byte b1, byte b2, byte b3, byte b4) {
         return Ints.fromBytes(b1, b2, b3, b4);
@@ -297,8 +297,8 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param bytes
-     * @return
+     * @param bytes TODO
+     * @return TODO
      */
     public static Short toShort(final byte[] bytes) {
         // TODO: determine constant values programmatically, or make them constant
@@ -310,9 +310,9 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param bytes
-     * @param offset
-     * @return
+     * @param bytes TODO
+     * @param offset TODO
+     * @return TODO
      */
     public static Short toShort(final byte[] bytes, final int offset) {
         // TODO: determine constant values programmatically, or make them constant
@@ -326,9 +326,9 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param b1
-     * @param b2
-     * @return
+     * @param b1 TODO
+     * @param b2 TODO
+     * @return TODO
      */
     public static short toShort(byte b1, byte b2) {
         return Shorts.fromBytes(b1, b2);
@@ -336,8 +336,8 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param time
-     * @return
+     * @param time TODO
+     * @return TODO
      */
     public static byte[] toBytes(final Instant time) {
         // TODO: determine constant values programmatically, or make them constant
@@ -352,8 +352,8 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param bytes
-     * @return
+     * @param bytes TODO
+     * @return TODO
      */
     public static Instant toInstant(final byte[] bytes) {
         // TODO: determine constant values programmatically, or make them constant
@@ -367,9 +367,9 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param bytes
-     * @param offset
-     * @return
+     * @param bytes TODO
+     * @param offset TODO
+     * @return TODO
      */
     public static Instant toInstant(final byte[] bytes, final int offset) {
         // TODO: determine constant values programmatically, or make them constant
@@ -382,8 +382,8 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param bytes
-     * @return
+     * @param bytes TODO
+     * @return TODO
      */
     public static String encode(final byte[] bytes) {
         return new String(BASE64_ENC.encode(bytes), Constants.CHARSET_DEFAULT);
@@ -391,8 +391,8 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param text
-     * @return
+     * @param text TODO
+     * @return TODO
      */
     public static byte[] decode(final String text) {
         return BASE64_DEC.decode(text);
@@ -400,8 +400,8 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param inBytes
-     * @return
+     * @param inBytes TODO
+     * @return TODO
      */
     public static byte[] copy(final byte[] inBytes) {
         if (inBytes == null) {
@@ -413,8 +413,8 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param bytes
-     * @return
+     * @param bytes TODO
+     * @return TODO
      */
     public static byte[] concat(final byte[]... bytes) {
         String logMsg;
@@ -441,8 +441,9 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param value
-     * @return
+     * @param value TODO
+     * @param <S> TODO
+     * @return TODO
      */
     public static <S extends Serializable> byte[] serialize(S value) {
         if (value != null) {
@@ -462,9 +463,10 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param bytes
-     * @param asClass
-     * @return
+     * @param bytes TODO
+     * @param asClass TODO
+     * @param <S> TODO
+     * @return TODO
      */
     public static <S extends Serializable> S deserialize(byte[] bytes, final Class<S> asClass) {
         if (bytes != null) {
@@ -482,8 +484,8 @@ public final class BytesUtil extends Uninstantiable {
 
     /**
      * TODO
-     * @param blocks
-     * @return
+     * @param blocks TODO
+     * @return TODO
      */
     public static long count(final Collection<byte[]> blocks) {
         if (blocks == null || blocks.isEmpty()) {
@@ -494,9 +496,9 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param first
-     * @param second
-     * @return
+     * @param first TODO
+     * @param second TODO
+     * @return TODO
      */
     public static byte[] zipBytes(final byte[] first, final byte[] second) {
         if (second == null || second.length == 0) {
@@ -521,11 +523,11 @@ public final class BytesUtil extends Uninstantiable {
     
     /**
      * TODO
-     * @param bytes
-     * @param selectedCopyStrategy
-     * @param copyIfTheseStrategies
-     * @return
-     * @throws IllegalArgumentException
+     * @param bytes TODO
+     * @param selectedCopyStrategy TODO
+     * @param copyIfTheseStrategies TODO
+     * @return TODO
+     * @throws IllegalArgumentException TODO
      */
     private static byte[] byteActionWithContext(final byte[] bytes, final DefensiveCopyStrategy selectedCopyStrategy, final EnumSet<DefensiveCopyStrategy> copyIfTheseStrategies) throws IllegalArgumentException {
         Util.ensureNotNull(copyIfTheseStrategies,
