@@ -15,6 +15,10 @@
     - **Constants:** Common constants used in serialization and for handling byte arrays; see Javadocs.
     - **DefensiveCopyStrategy:** Enum which can serve as a flag to the application layer to indicate when to perform defensive copies of byte arrays being processed.
 
+## TEST BUILDING
+
+Test CI config.
+
 ## License and Trademarks
 
 Copyright © 2016 Liaison Technologies, Inc.
